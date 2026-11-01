@@ -22,13 +22,15 @@ button { font: inherit; cursor: pointer; }
   height: 56px; display: flex; align-items: center; gap: 24px; padding: 0 16px;
   background: var(--navy); color: #fff;
 }
-.brand { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.brand { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; min-width: 0; overflow: hidden; }
+.brand .name { overflow: hidden; text-overflow: ellipsis; }
 .brand .badge { background: var(--amber); color: var(--navy); font-weight: 700; padding: 2px 8px; border-radius: 6px; }
 .brand .name { font-weight: 600; font-size: 16px; }
 .brand .sub { color: var(--ice); font-size: 13px; }
 .tabs { display: flex; gap: 4px; }
 .tabs button {
   background: transparent; color: var(--ice); border: 0; padding: 8px 14px; border-radius: 8px; font-weight: 500;
+  white-space: nowrap;
 }
 .tabs button[aria-selected="true"] { background: rgba(255, 255, 255, .14); color: #fff; }
 .warn { margin-left: auto; font-size: 12px; color: var(--navy); background: var(--amber); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
@@ -147,6 +149,7 @@ input[type="range"] { width: 100%; accent-color: var(--teal); margin-top: 8px; }
 
 @media (max-width: 1100px) {
   #tab-model { grid-template-columns: 230px 1fr 320px; }
+  .brand .sub { display: none; }
 }
 @media (max-width: 860px) {
   body { overflow: auto; }
