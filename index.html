@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riverbank Dam Viewer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/three.module.js", "three/addons/": "./vendor/three/addons/" } }
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="badge">BIM</span><span class="name">ตัวอย่างเขื่อนป้องกันตลิ่ง ชนิดตอกเสาเข็ม</span><span class="sub">แบบจำลอง 3D · Object Library · BOQ</span></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="model" aria-selected="true">แบบจำลอง T3-01</button>
+    <button role="tab" data-tab="library" aria-selected="false">Object Library</button>
+  </nav>
+  <div class="warn" title="">ตัวอย่างสาธิต · มีค่าสมมุติ · ห้ามใช้ก่อสร้าง</div>
+</header>
+
+<main>
+  <section id="tab-model" class="tab on">
+    <aside class="side left">
+      <h3>ชิ้นส่วนในแบบจำลอง</h3>
+      <div id="comp-list" class="comp-list"></div>
+      <h3>ตัดรูปตัด</h3>
+      <label class="check"><input type="checkbox" id="cut-on"> ตัดที่ <b id="cut-label">STA 0+050</b></label>
+      <input type="range" id="cut" min="0" max="100" step="0.5" value="50" aria-label="ตำแหน่งรูปตัด">
+      <h3>มุมมอง</h3>
+      <div class="views">
+        <button data-view="iso">3D</button><button data-view="section">รูปตัด</button>
+        <button data-view="top">แปลน</button><button data-view="river">ฝั่งแม่น้ำ</button>
+      </div>
+      <button id="clear" class="ghost-btn">ล้างการเลือก</button>
+    </aside>
+    <div class="stage" id="stage-model">
+      <div class="hint">คลิกชิ้นส่วนเพื่อดูข้อมูล · ลากเพื่อหมุน · คลิกขวาลากเพื่อเลื่อน · ล้อเมาส์เพื่อซูม</div>
+      <div class="toast" id="toast"></div>
+    </div>
+    <aside class="side right">
+      <div id="info" class="info empty">คลิกชิ้นส่วนในแบบจำลอง<br>เพื่อดูปริมาณ รหัสรายการ และพิกัด</div>
+      <h3>BOQ ปร.4 <small>คลิกรายการเพื่อไฮไลต์ในแบบจำลอง</small></h3>
+      <div class="boq-wrap"><table id="boq" class="boq"></table></div>
+    </aside>
+  </section>
+
+  <section id="tab-library" class="tab">
+    <div class="gallery" id="gallery"></div>
+    <div class="detail">
+      <div class="stage preview" id="stage-lib"><div class="hint" id="lib-hint"></div></div>
+      <div id="fam-detail" class="fam-detail"></div>
+    </div>
+  </section>
+</main>
+
+<div id="loading" class="loading">กำลังโหลดแบบจำลอง…</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

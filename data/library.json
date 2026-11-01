@@ -1,0 +1,1484 @@
+{
+ "assembly": {
+  "id": "T3-01",
+  "title": "เขื่อนป้องกันตลิ่ง ชนิดตอกเสาเข็ม (แบบมาตรฐานกรม ชนิดที่ 3)",
+  "status": "ขนาดอ่านจากรูปขยายรูปตัดเขื่อนทั่วไป 1:50 (udrqgt หน้า 16) · ค่าที่รูปไม่ให้เป็น ASSUMED · รูปตัดสำรวจเป็นค่าสมมุติ · ยังไม่ได้ตรวจเสถียรภาพ ไม่ใช่แบบก่อสร้าง",
+  "length": 100.0,
+  "survey": "รูปตัดสำรวจสมมุติทุก 25 ม. (บทที่ 2: ทุก STA ไม่เกิน 25 ม.) · ดินเดิมบนบก +99.95 · ลาดตลิ่ง 1:1.5"
+ },
+ "src_th": {
+  "READ": "อ่านจากแบบกรม",
+  "SPEC": "รายการประกอบแบบ",
+  "ASSUMED": "สมมุติ"
+ },
+ "families": [
+  {
+   "id": "pile",
+   "name_th": "เสาเข็ม ค.ส.ล.",
+   "category": "structural",
+   "placement": "pattern",
+   "ifc": "IfcPile",
+   "layer": "C-Piles",
+   "unit": "ต้น",
+   "rule": "นับจำนวนตามแบบ (บทที่ 7 ข้อ 1.4(1)(1.2)); สกัดหัวเสาเข็มนับเท่าจำนวนต้น",
+   "spec": [
+    21
+   ],
+   "std_drawing": null,
+   "used_in": [
+    3,
+    4
+   ],
+   "params": {
+    "size": {
+     "default": 0.4,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "หน้าตัดสี่เหลี่ยม วัดจากรูป 1:50 ได้โดยประมาณ"
+    },
+    "length": {
+     "default": 18.0,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": "รูปเขียนตัดย่อ ต้องได้จากรายการคำนวณ/ข้อมูลดิน"
+    },
+    "o_center": {
+     "default": 0.2,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ศูนย์กลางเสาที่หัวเสา (ระยะจากผิวหน้าเขื่อน)"
+    },
+    "top": {
+     "default": 99.8,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ระดับหัวเสา = ใต้คานยึดหัวเสาเข็ม"
+    },
+    "batter": {
+     "default": 0.0,
+     "unit": "1:k",
+     "src": "READ",
+     "note": "0 = ตั้งตรง; k = เอียง 1:k ลงไปทางฝั่งบก"
+    }
+   },
+   "category_th": "ค.ส.ล.",
+   "types_th": [
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "picture": "assets/library/pile.jpg",
+   "window": [
+    20,
+    24.5
+   ],
+   "in_model": [
+    {
+     "component": "pile_A",
+     "name_th": "เสาเข็ม ค.ส.ล. A",
+     "count": 101,
+     "params": {
+      "size": 0.4,
+      "length": 18.0,
+      "o_center": 0.2,
+      "top": 99.80000000000001,
+      "batter": 0
+     }
+    },
+    {
+     "component": "pile_B",
+     "name_th": "เสาเข็มเอียง B",
+     "count": 100,
+     "params": {
+      "size": 0.3,
+      "length": 18.0,
+      "o_center": 0.95,
+      "top": 99.80000000000001,
+      "batter": 6
+     }
+    },
+    {
+     "component": "pile_C",
+     "name_th": "เสาเข็ม B แถวหลัง",
+     "count": 26,
+     "params": {
+      "size": 0.3,
+      "length": 16.0,
+      "o_center": 5.05,
+      "top": 99.9,
+      "batter": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": "panel",
+   "name_th": "แผงกันดิน ค.ส.ล.",
+   "category": "structural",
+   "placement": "pattern",
+   "ifc": "IfcWall",
+   "layer": "C-Panel",
+   "unit": "แผง",
+   "rule": "นับจำนวนตามแบบ (บทที่ 7 ข้อ 1.4(1)(1.4))",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [
+    3,
+    4
+   ],
+   "params": {
+    "o0": {
+     "default": 0.4,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ผิวหน้าแผง (ชิดหลังเสาเข็มแถวหน้า)"
+    },
+    "t": {
+     "default": 0.12,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": "แบบขยายแผงไม่มีในมือ"
+    },
+    "top": {
+     "default": 99.8,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "height": {
+     "default": 4.0,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "วัดจากรูป 1:50 โดยประมาณ"
+    },
+    "width": {
+     "default": 1.0,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "เท่าระยะเสาเข็มแถวหน้า"
+    }
+   },
+   "category_th": "ค.ส.ล.",
+   "types_th": [
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "picture": "assets/library/panel.jpg",
+   "window": [
+    20,
+    28
+   ],
+   "in_model": [
+    {
+     "component": "panel",
+     "name_th": "แผงกันดิน ค.ส.ล.",
+     "count": 100,
+     "params": {
+      "o0": 0.4,
+      "t": 0.12,
+      "top": 99.80000000000001,
+      "height": 4.0,
+      "width": 1.0
+     }
+    }
+   ]
+  },
+  {
+   "id": "cap_beam",
+   "name_th": "คาน ค.ส.ล. ยึดหัวเสาเข็ม",
+   "category": "structural",
+   "placement": "sweep",
+   "ifc": "IfcBeam",
+   "layer": "C-Beam",
+   "unit": "เมตร",
+   "rule": "ความยาวตามแนวเขื่อน (บทที่ 7 ข้อ 1.4(1)(1.5))",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [
+    3,
+    4
+   ],
+   "params": {
+    "o0": {
+     "default": 0.0,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "width": {
+     "default": 1.2,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "depth": {
+     "default": 0.6,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "วัดจากรูป ±0.05"
+    },
+    "top": {
+     "default": 100.4,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ระดับสันเขื่อน"
+    }
+   },
+   "category_th": "ค.ส.ล.",
+   "types_th": [
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "picture": "assets/library/cap_beam.jpg",
+   "window": [
+    20,
+    30
+   ],
+   "in_model": [
+    {
+     "component": "front_beam",
+     "name_th": "คาน ค.ส.ล. ยึดหัวเสาเข็ม (หน้า)",
+     "count": 10,
+     "params": {
+      "o0": 0.0,
+      "width": 1.2,
+      "depth": 0.6,
+      "top": 100.4
+     }
+    },
+    {
+     "component": "back_beam",
+     "name_th": "คาน ค.ส.ล. ยึดหัวเสาเข็ม (หลัง)",
+     "count": 10,
+     "params": {
+      "o0": 4.9,
+      "width": 0.3,
+      "depth": 0.5,
+      "top": 100.4
+     }
+    }
+   ]
+  },
+  {
+   "id": "cross_beam",
+   "name_th": "คาน ค.ส.ล. ซอย (ใต้พื้น)",
+   "category": "structural",
+   "placement": "pattern",
+   "ifc": "IfcBeam",
+   "layer": "C-Beam",
+   "unit": "เมตร",
+   "rule": "นับจำนวนตามแบบ × ความยาว",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [
+    3
+   ],
+   "params": {
+    "o0": {
+     "default": 1.2,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "o1": {
+     "default": 4.9,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "z_top": {
+     "default": 100.22,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ใต้พื้น"
+    },
+    "z_bot": {
+     "default": 99.8,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "width": {
+     "default": 0.25,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": ""
+    }
+   },
+   "category_th": "ค.ส.ล.",
+   "types_th": [
+    "ตอกเสาเข็ม"
+   ],
+   "picture": "assets/library/cross_beam.jpg",
+   "window": [
+    20,
+    32.5
+   ],
+   "in_model": [
+    {
+     "component": "cross_beam",
+     "name_th": "คาน B3",
+     "count": 26,
+     "params": {
+      "o0": 1.2,
+      "o1": 4.9,
+      "z_top": 100.22,
+      "z_bot": 99.80000000000001,
+      "width": 0.25
+     }
+    }
+   ]
+  },
+  {
+   "id": "deck_slab",
+   "name_th": "พื้นทางเท้า ค.ส.ล.",
+   "category": "structural",
+   "placement": "sweep",
+   "ifc": "IfcSlab",
+   "layer": "C-Deck",
+   "unit": "ตร.ม.",
+   "rule": "ความกว้าง × ความยาวแนวเขื่อน (บทที่ 7 ข้อ 1.4(2)(1.13))",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [
+    3,
+    5
+   ],
+   "params": {
+    "o0": {
+     "default": 1.2,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "o1": {
+     "default": 4.9,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "top": {
+     "default": 100.4,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "t": {
+     "default": 0.18,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "วัดจากรูป ±0.05"
+    }
+   },
+   "category_th": "ค.ส.ล.",
+   "types_th": [
+    "ตอกเสาเข็ม",
+    "ริมทะเล"
+   ],
+   "picture": "assets/library/deck_slab.jpg",
+   "window": [
+    20,
+    30
+   ],
+   "in_model": [
+    {
+     "component": "deck_slab",
+     "name_th": "พื้นทางเท้า ค.ส.ล.",
+     "count": 10,
+     "params": {
+      "o0": 1.2,
+      "o1": 4.9,
+      "top": 100.4,
+      "t": 0.18
+     }
+    }
+   ]
+  },
+  {
+   "id": "catch_pit",
+   "name_th": "บ่อพัก ค.ส.ล. พร้อมท่อ",
+   "category": "structural",
+   "placement": "pattern",
+   "ifc": "IfcFlowController",
+   "layer": "C-Drainage",
+   "unit": "แห่ง",
+   "rule": "นับจำนวนตามแบบ",
+   "spec": [
+    3
+   ],
+   "std_drawing": "ส.10190",
+   "used_in": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "params": {
+    "o0": {
+     "default": 1.6,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": ""
+    },
+    "o1": {
+     "default": 2.4,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": ""
+    },
+    "top": {
+     "default": 100.22,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "bottom": {
+     "default": 98.8,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": ""
+    }
+   },
+   "category_th": "ค.ส.ล.",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "picture": "assets/library/catch_pit.jpg",
+   "window": "first",
+   "in_model": [
+    {
+     "component": "catch_pit",
+     "name_th": "บ่อพัก ค.ส.ล.",
+     "count": 5,
+     "params": {
+      "o0": 1.6,
+      "o1": 2.4,
+      "top": 100.22,
+      "bottom": 98.80000000000001
+     }
+    }
+   ]
+  },
+  {
+   "id": "railing",
+   "name_th": "ราวเหล็กกันตก",
+   "category": "fitting",
+   "placement": "sweep",
+   "ifc": "IfcRailing",
+   "layer": "C-Railing",
+   "unit": "เมตร",
+   "rule": "ความยาวตามแนวเขื่อน",
+   "spec": [
+    2
+   ],
+   "std_drawing": "ส.10191",
+   "used_in": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "params": {
+    "o": {
+     "default": 0.14,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "top": {
+     "default": 100.4,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ฐานราว"
+    },
+    "height": {
+     "default": 1.0,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "post": {
+     "default": 0.08,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": ""
+    },
+    "post_spacing": {
+     "default": 2.0,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": "แบบมาตรฐาน ส.10191 ไม่มีในมือ"
+    },
+    "pipes": {
+     "default": [
+      [
+       1.0,
+       0.073
+      ],
+      [
+       0.66,
+       0.0603
+      ],
+      [
+       0.33,
+       0.0603
+      ]
+     ],
+     "unit": "[ความสูง, Ø]",
+     "src": "READ",
+     "note": "ท่อเหล็กอาบสังกะสี Ø2½\" + Ø2\" ×2"
+    }
+   },
+   "category_th": "อุปกรณ์",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "picture": "assets/library/railing.jpg",
+   "window": [
+    20,
+    30
+   ],
+   "in_model": [
+    {
+     "component": "railing",
+     "name_th": "ราวเหล็กกันตก",
+     "count": 10,
+     "params": {
+      "o": 0.14,
+      "top": 100.4,
+      "height": 1.0,
+      "post": 0.08,
+      "post_spacing": 2.0,
+      "pipes": [
+       [
+        1.0,
+        0.073
+       ],
+       [
+        0.66,
+        0.0603
+       ],
+       [
+        0.33,
+        0.0603
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "pile_scaffold",
+   "name_th": "นั่งร้านตอกเสาเข็ม",
+   "category": "work",
+   "placement": "none",
+   "ifc": null,
+   "layer": "",
+   "unit": "ตร.ม.",
+   "rule": "แบบเข็มเดียว กว้าง 4.00 ม.; แบบโต๊ะ กว้างโต๊ะ (ไม่น้อยกว่า 4.00 ม.) × ความยาวแนวเขื่อน (บทที่ 7 ข้อ 1.4(1)(1.1))",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [
+    3,
+    4
+   ],
+   "params": {
+    "width": {
+     "default": 5.2,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ความกว้างโต๊ะ"
+    }
+   },
+   "category_th": "งานชั่วคราว",
+   "types_th": [
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "picture": null,
+   "window": null,
+   "in_model": []
+  },
+  {
+   "id": "rock_toe",
+   "name_th": "ทิ้งหินใหญ่ตีนเขื่อน",
+   "category": "earthworks",
+   "placement": "stations",
+   "ifc": "IfcCovering",
+   "layer": "C-Rock",
+   "unit": "ลบ.ม.",
+   "rule": "พื้นที่หน้าตัด × ระยะห่างระหว่างหน้าตัด คิดทุกรูปตัด (บทที่ 7 ข้อ 1.4(2)(1.2))",
+   "spec": [
+    7,
+    9,
+    12,
+    13
+   ],
+   "std_drawing": null,
+   "used_in": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "params": {
+    "top": {
+     "default": 98.4,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "ระดับบนหินทิ้ง"
+    },
+    "o_face": {
+     "default": 0.0,
+     "unit": "ม.",
+     "src": "READ",
+     "note": "หินชนผิวหน้าเขื่อน"
+    },
+    "berm": {
+     "default": 1.0,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "slope_h": {
+     "default": 2.0,
+     "unit": "ราบ:1",
+     "src": "READ",
+     "note": "ลาด 2:1"
+    },
+    "stone": {
+     "default": 0.35,
+     "unit": "ม.",
+     "src": "SPEC",
+     "note": "รายการประกอบแบบข้อ 7"
+    }
+   },
+   "category_th": "ดิน-หิน",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "picture": "assets/library/rock_toe.jpg",
+   "window": [
+    25,
+    50
+   ],
+   "in_model": [
+    {
+     "component": "rock_toe",
+     "name_th": "ทิ้งหินใหญ่ตีนเขื่อน",
+     "count": 4,
+     "params": {
+      "top": 98.4,
+      "o_face": 0.0,
+      "berm": 1.0,
+      "slope_h": 2.0,
+      "stone": 0.35
+     }
+    }
+   ]
+  },
+  {
+   "id": "sand_fill",
+   "name_th": "ถมทรายอัดแน่น",
+   "category": "earthworks",
+   "placement": "stations",
+   "ifc": null,
+   "layer": "C-Fill",
+   "unit": "ลบ.ม.",
+   "rule": "พื้นที่แต่ละหน้าตัด × ระยะห่างระหว่างหน้าตัด (บทที่ 7 ข้อ 1.4(2)(1.4))",
+   "spec": [
+    10,
+    18
+   ],
+   "std_drawing": null,
+   "used_in": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "params": {
+    "ceiling": {
+     "default": [],
+     "unit": "[(o, z)]",
+     "src": "READ",
+     "note": "ผิวล่างของสิ่งที่อยู่เหนือทราย (ใต้คาน/พื้น/ชั้นดินเหนียว) จากหลังแผงถึงปลายรูปตัด"
+    }
+   },
+   "category_th": "ดิน-หิน",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "picture": "assets/library/sand_fill.jpg",
+   "window": [
+    25,
+    50
+   ],
+   "in_model": [
+    {
+     "component": "sand_fill",
+     "name_th": "ถมทรายอัดแน่น",
+     "count": 4,
+     "params": {
+      "ceiling": [
+       [
+        0.52,
+        99.80000000000001
+       ],
+       [
+        1.2,
+        99.80000000000001
+       ],
+       [
+        1.2,
+        100.22
+       ],
+       [
+        4.9,
+        100.22
+       ],
+       [
+        4.9,
+        99.9
+       ],
+       [
+        5.2,
+        99.9
+       ],
+       [
+        5.2,
+        99.95
+       ],
+       [
+        15.0,
+        99.95
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "geotextile",
+   "name_th": "แผ่นใยสังเคราะห์ (วัสดุกรอง)",
+   "category": "earthworks",
+   "placement": "surface",
+   "ifc": null,
+   "layer": "C-Geotextile",
+   "unit": "ตร.ม.",
+   "rule": "ความกว้างที่ปูตามแบบ × ความยาวแนวเขื่อน + การซ้อนทับตามแบบ (บทที่ 7 ข้อ 1.4(2)(1.5))",
+   "spec": [
+    1,
+    11
+   ],
+   "std_drawing": "ส.10192",
+   "used_in": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "params": {
+    "line": {
+     "default": [],
+     "unit": "[(o, z)]",
+     "src": "READ",
+     "note": "แนวที่ปู ในรูปตัด"
+    },
+    "overlap": {
+     "default": 0.0,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": "ระยะซ้อนทับต่อความกว้าง (บทที่ 5: ≥ 0.30 ม.)"
+    }
+   },
+   "category_th": "ดิน-หิน",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "picture": "assets/library/geotextile.jpg",
+   "window": null,
+   "in_model": [
+    {
+     "component": "geotextile",
+     "name_th": "แผ่นใยสังเคราะห์ (วัสดุกรอง)",
+     "count": 1,
+     "params": {
+      "line": [
+       [
+        0.525,
+        95.80000000000001
+       ],
+       [
+        0.525,
+        99.80000000000001
+       ]
+      ],
+      "overlap": 0.0
+     }
+    }
+   ]
+  },
+  {
+   "id": "end_rock",
+   "name_th": "ทิ้งหินใหญ่ปิดหัว-ท้ายเขื่อน",
+   "category": "earthworks",
+   "placement": "ends",
+   "ifc": "IfcCovering",
+   "layer": "C-Rock",
+   "unit": "ลบ.ม.",
+   "rule": "½ × ความสูงเฉลี่ย × แนวลาด × ความกว้างตัวเขื่อน (บทที่ 7 ข้อ 1.4(2)(1.15))",
+   "spec": [
+    7,
+    25
+   ],
+   "std_drawing": null,
+   "used_in": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "params": {
+    "crest": {
+     "default": 100.4,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "o0": {
+     "default": 0.0,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "o1": {
+     "default": 5.2,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "slope_h": {
+     "default": 2.0,
+     "unit": "ราบ:1",
+     "src": "SPEC",
+     "note": "รายการประกอบแบบข้อ 25: ลาด 1:2"
+    },
+    "stone": {
+     "default": 0.35,
+     "unit": "ม.",
+     "src": "SPEC",
+     "note": "รายการประกอบแบบข้อ 25"
+    }
+   },
+   "category_th": "ดิน-หิน",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "picture": "assets/library/end_rock.jpg",
+   "window": "first",
+   "in_model": [
+    {
+     "component": "end_rock",
+     "name_th": "ทิ้งหินใหญ่ปิดหัว-ท้ายเขื่อน",
+     "count": 2,
+     "params": {
+      "crest": 100.4,
+      "o0": 0.0,
+      "o1": 5.2,
+      "slope_h": 2.0,
+      "stone": 0.35
+     }
+    }
+   ]
+  },
+  {
+   "id": "clay_cap",
+   "name_th": "ถมดินเหนียวบดอัดแน่น ปลูกหญ้า",
+   "category": "earthworks",
+   "placement": "sweep",
+   "ifc": null,
+   "layer": "C-Fill",
+   "unit": "ลบ.ม.",
+   "rule": "พื้นที่หน้าตัด × ความยาว; ปลูกหญ้า = ความกว้าง × ความยาว",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [
+    3,
+    4
+   ],
+   "params": {
+    "o0": {
+     "default": 5.2,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "width": {
+     "default": 2.8,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": ""
+    },
+    "t": {
+     "default": 0.3,
+     "unit": "ม.",
+     "src": "READ",
+     "note": ""
+    },
+    "base": {
+     "default": 99.95,
+     "unit": "ม.",
+     "src": "ASSUMED",
+     "note": "ระดับดินเดิมหลังเขื่อน"
+    }
+   },
+   "category_th": "ดิน-หิน",
+   "types_th": [
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "picture": "assets/library/clay_cap.jpg",
+   "window": [
+    20,
+    30
+   ],
+   "in_model": [
+    {
+     "component": "clay_cap",
+     "name_th": "ถมดินเหนียวบดอัด 0.30 ม. ปลูกหญ้า",
+     "count": 10,
+     "params": {
+      "o0": 5.2,
+      "width": 2.8,
+      "t": 0.3,
+      "base": 99.95
+     }
+    }
+   ]
+  },
+  {
+   "id": "ground_surface",
+   "name_th": "ผิวดินเดิม (จากรูปตัดสำรวจ)",
+   "category": "site",
+   "placement": "survey_surface",
+   "ifc": null,
+   "layer": "L-Existing ground",
+   "unit": "",
+   "rule": "",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [],
+   "params": {},
+   "category_th": "สำรวจ",
+   "types_th": [],
+   "picture": "assets/library/ground_surface.jpg",
+   "window": null,
+   "in_model": [
+    {
+     "component": "ground",
+     "name_th": "ผิวดินเดิม (จากรูปตัดสำรวจ)",
+     "count": 1,
+     "params": {}
+    }
+   ]
+  },
+  {
+   "id": "level_plane",
+   "name_th": "ผิวระดับ (น้ำ / พื้นดิน)",
+   "category": "site",
+   "placement": "surface",
+   "ifc": null,
+   "layer": "L-Site",
+   "unit": "",
+   "rule": "",
+   "spec": [],
+   "std_drawing": null,
+   "used_in": [],
+   "params": {
+    "line": {
+     "default": [],
+     "unit": "[(o, z)]",
+     "src": "READ",
+     "note": ""
+    }
+   },
+   "category_th": "สำรวจ",
+   "types_th": [],
+   "picture": null,
+   "window": null,
+   "in_model": [
+    {
+     "component": "water",
+     "name_th": "ระดับน้ำต่ำสุดเฉลี่ย",
+     "count": 1,
+     "params": {
+      "line": [
+       [
+        -30.0,
+        95.558
+       ],
+       [
+        -6.6839999999999975,
+        95.558
+       ]
+      ]
+     }
+    },
+    {
+     "component": "land_plane",
+     "name_th": "พื้นดินหลังเขื่อน",
+     "count": 1,
+     "params": {
+      "line": [
+       [
+        8.4,
+        99.97
+       ],
+       [
+        15.0,
+        99.97
+       ]
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "planned": [
+  {
+   "id": "stone_pitching",
+   "name_th": "เรียงหินใหญ่หน้าเขื่อน แทรกหินเล็ก",
+   "pr4": "19",
+   "types_th": [
+    "เรียงหิน",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "spec": "6, 9, 11",
+   "std_drawing": ""
+  },
+  {
+   "id": "toe_dike",
+   "name_th": "คันหินทิ้งตีนเขื่อน (สูงไม่น้อยกว่า 1.50 ม.)",
+   "pr4": "14",
+   "types_th": [
+    "เกเบี้ยน",
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "spec": "7",
+   "std_drawing": ""
+  },
+  {
+   "id": "gabion",
+   "name_th": "กล่องลวดตาข่ายเกเบี้ยน 1.00×2.00×0.50 ม.",
+   "pr4": "15, 16",
+   "types_th": [
+    "เกเบี้ยน"
+   ],
+   "spec": "1, 8",
+   "std_drawing": "ส.10192"
+  },
+  {
+   "id": "mattress",
+   "name_th": "กล่องลวดตาข่ายแมทเทรส",
+   "pr4": "15, 16",
+   "types_th": [
+    "เกเบี้ยน"
+   ],
+   "spec": "1, 8",
+   "std_drawing": "ส.10192"
+  },
+  {
+   "id": "gravel_filter",
+   "name_th": "ชั้นกรองหินคละ/กรวดคละ 1\"–3\" หนา 0.25 ม.",
+   "pr4": "18",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน"
+   ],
+   "spec": "11",
+   "std_drawing": ""
+  },
+  {
+   "id": "anchor_slab",
+   "name_th": "แผงสมอ ค.ส.ล.",
+   "pr4": "6",
+   "types_th": [
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  },
+  {
+   "id": "tie_rod",
+   "name_th": "สายสมอพร้อมเกลียวเร่ง",
+   "pr4": "7",
+   "types_th": [
+    "ตอกเสาเข็มมีสายสมอ"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  },
+  {
+   "id": "rc_wall",
+   "name_th": "กำแพง ค.ส.ล. + Base key (เขื่อนริมทะเล)",
+   "pr4": "33",
+   "types_th": [
+    "ริมทะเล"
+   ],
+   "spec": "4",
+   "std_drawing": ""
+  },
+  {
+   "id": "weep_hole",
+   "name_th": "Weep hole ท่อ PVC Ø4\"",
+   "pr4": "33",
+   "types_th": [
+    "ริมทะเล"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  },
+  {
+   "id": "curb",
+   "name_th": "คันหิน ค.ส.ล.",
+   "pr4": "12, 24",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน"
+   ],
+   "spec": "3",
+   "std_drawing": "ส.10190"
+  },
+  {
+   "id": "drain_channel",
+   "name_th": "รางระบายน้ำ ค.ส.ล. พร้อมฝาปิด",
+   "pr4": "8, 23",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "spec": "3",
+   "std_drawing": "ส.10190"
+  },
+  {
+   "id": "front_drain",
+   "name_th": "รางระบายน้ำ ค.ส.ล. ออกหน้าเขื่อน",
+   "pr4": "11",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "spec": "15",
+   "std_drawing": ""
+  },
+  {
+   "id": "rc_stair",
+   "name_th": "บันได ค.ส.ล.",
+   "pr4": "10",
+   "types_th": [
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "spec": "2",
+   "std_drawing": ""
+  },
+  {
+   "id": "stone_stair",
+   "name_th": "บันไดหินเรียงยาแนว",
+   "pr4": "25",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  },
+  {
+   "id": "grandstand",
+   "name_th": "อัฒจันทร์หินเรียงยาแนว",
+   "pr4": "26",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  },
+  {
+   "id": "block_paving",
+   "name_th": "ทางเท้าบล็อกตัวหนอน 6 ซม. (หินคลุก 10 · ทราย 4–6)",
+   "pr4": "27",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน"
+   ],
+   "spec": "20",
+   "std_drawing": ""
+  },
+  {
+   "id": "laterite_fill",
+   "name_th": "ถมดินลูกรังบดอัดแน่น",
+   "pr4": "28",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  },
+  {
+   "id": "site_clearing",
+   "name_th": "ปรับพื้นที่ (ความกว้าง + 2) × ยาว",
+   "pr4": "13",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน"
+   ],
+   "spec": "14",
+   "std_drawing": ""
+  },
+  {
+   "id": "flap_outlet",
+   "name_th": "ท่อระบายผ่านเขื่อน + บานกระพือ",
+   "pr4": "9",
+   "types_th": [
+    "เรียงหิน",
+    "เกเบี้ยน",
+    "ตอกเสาเข็ม",
+    "ตอกเสาเข็มมีสายสมอ",
+    "ริมทะเล"
+   ],
+   "spec": "16",
+   "std_drawing": ""
+  },
+  {
+   "id": "lighting",
+   "name_th": "ฐานเสาไฟ ค.ส.ล. + เสาไฟดวงโคม",
+   "pr4": "31, 32",
+   "types_th": [
+    "ริมทะเล"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  },
+  {
+   "id": "road",
+   "name_th": "ถนนหลังเขื่อน (ลูกรัง / ค.ส.ล. / แอสฟัลต์)",
+   "pr4": "30",
+   "types_th": [
+    "ริมทะเล"
+   ],
+   "spec": "",
+   "std_drawing": ""
+  }
+ ],
+ "boq": [
+  {
+   "pr4": "1",
+   "desc": "นั่งร้านตอกเสาเข็ม (แบบโต๊ะ)",
+   "unit": "ตร.ม.",
+   "qty": 520.0,
+   "rule": "บทที่ 7 ข้อ 1.4(1)(1.1)",
+   "note": "กว้างโต๊ะ 5.20 ม. × ความยาวแนวเขื่อน",
+   "waste": null
+  },
+  {
+   "pr4": "2.1",
+   "desc": "เสาเข็ม ค.ส.ล. 0.40×0.40 ม. ยาว 18.00 ม. (แถวหน้า A)",
+   "unit": "ต้น",
+   "qty": 101,
+   "rule": "นับตามแบบ",
+   "note": "@1.00 ม.",
+   "waste": null
+  },
+  {
+   "pr4": "2.2",
+   "desc": "เสาเข็ม ค.ส.ล. 0.30×0.30 ม. ยาว 18.00 ม. (เอียง 1:6)",
+   "unit": "ต้น",
+   "qty": 100,
+   "rule": "นับตามแบบ",
+   "note": "@1.00 ม.",
+   "waste": null
+  },
+  {
+   "pr4": "2.3",
+   "desc": "เสาเข็ม ค.ส.ล. 0.30×0.30 ม. ยาว 16.00 ม. (แถวหลัง)",
+   "unit": "ต้น",
+   "qty": 26,
+   "rule": "นับตามแบบ",
+   "note": "@4.00 ม.",
+   "waste": null
+  },
+  {
+   "pr4": "3.1",
+   "desc": "สกัดหัวเสาเข็ม ขนาด 0.40 ม.",
+   "unit": "ต้น",
+   "qty": 101,
+   "rule": "นับตามแบบ",
+   "note": "",
+   "waste": null
+  },
+  {
+   "pr4": "3.2",
+   "desc": "สกัดหัวเสาเข็ม ขนาด 0.30 ม.",
+   "unit": "ต้น",
+   "qty": 126,
+   "rule": "นับตามแบบ",
+   "note": "",
+   "waste": null
+  },
+  {
+   "pr4": "4",
+   "desc": "แผงกันดิน ค.ส.ล. 1.00×4.00×0.12 ม.",
+   "unit": "แผง",
+   "qty": 100,
+   "rule": "นับตามแบบ",
+   "note": "",
+   "waste": "concrete"
+  },
+  {
+   "pr4": "5.1",
+   "desc": "คาน ค.ส.ล. ยึดหัวเสาเข็ม (หน้า) 1.20×0.60 ม.",
+   "unit": "เมตร",
+   "qty": 100.0,
+   "rule": "ความยาวตามแนว",
+   "note": "",
+   "waste": "concrete"
+  },
+  {
+   "pr4": "5.2",
+   "desc": "คาน ค.ส.ล. ยึดหัวเสาเข็ม (หลัง) 0.30×0.50 ม.",
+   "unit": "เมตร",
+   "qty": 100.0,
+   "rule": "ความยาวตามแนว",
+   "note": "",
+   "waste": "concrete"
+  },
+  {
+   "pr4": "5.3",
+   "desc": "คาน ค.ส.ล. B3 0.25×0.42 ม. (ใต้พื้น)",
+   "unit": "เมตร",
+   "qty": 96.2,
+   "rule": "นับตามแบบ",
+   "note": "26 ตัว × 3.70 ม.",
+   "waste": "concrete"
+  },
+  {
+   "pr4": "9",
+   "desc": "บ่อพัก ค.ส.ล. พร้อมท่อ",
+   "unit": "แห่ง",
+   "qty": 5,
+   "rule": "นับตามแบบ",
+   "note": "ทุก 20.00 ม.",
+   "waste": null
+  },
+  {
+   "pr4": "14",
+   "desc": "ทิ้งหินใหญ่ตีนเขื่อน",
+   "unit": "ลบ.ม.",
+   "qty": 2166.3541748437515,
+   "rule": "พื้นที่หน้าตัด × ระยะห่างหน้าตัด",
+   "note": "หิน 0.35 ม. · berm 1.00 ม. ลาด 1:2",
+   "waste": "rock_toe"
+  },
+  {
+   "pr4": "17",
+   "desc": "ถมทรายอัดแน่น",
+   "unit": "ลบ.ม.",
+   "qty": 829.5101955624998,
+   "rule": "พื้นที่หน้าตัด × ระยะห่างหน้าตัด",
+   "note": "หลังแผง ใต้พื้นและคาน",
+   "waste": "sand"
+  },
+  {
+   "pr4": "18",
+   "desc": "แผ่นใยสังเคราะห์ (วัสดุกรอง)",
+   "unit": "ตร.ม.",
+   "qty": 400.0,
+   "rule": "ความกว้างที่ปู × ความยาวแนวเขื่อน",
+   "note": "หลังแผงกันดิน ยังไม่รวมระยะซ้อนทับ",
+   "waste": null
+  },
+  {
+   "pr4": "21",
+   "desc": "ราวเหล็กกันตก (ท่ออาบสังกะสี Ø2½\" + Ø2\" ×2)",
+   "unit": "เมตร",
+   "qty": 100.0,
+   "rule": "ความยาวตามแนว",
+   "note": "",
+   "waste": null
+  },
+  {
+   "pr4": "27",
+   "desc": "ทางเท้าชนิดพื้น ค.ส.ล. หนา 0.18 ม.",
+   "unit": "ตร.ม.",
+   "qty": 370.0,
+   "rule": "ความกว้าง × ความยาวแนวเขื่อน",
+   "note": "",
+   "waste": "concrete"
+  },
+  {
+   "pr4": "29",
+   "desc": "ทิ้งหินใหญ่ปิดหัว-ท้ายเขื่อน",
+   "unit": "ลบ.ม.",
+   "qty": 32.38412345679018,
+   "rule": "½ × ความสูงเฉลี่ย × แนวลาด × ความกว้างเขื่อน",
+   "note": "หิน 0.35 ม. ลาด 1:2",
+   "waste": "rock_end"
+  },
+  {
+   "pr4": "33.1",
+   "desc": "ถมดินเหนียวบดอัดแน่น หนา 0.30 ม.",
+   "unit": "ลบ.ม.",
+   "qty": 88.49999999998772,
+   "rule": "พื้นที่หน้าตัด × ความยาว",
+   "note": "",
+   "waste": "soil"
+  },
+  {
+   "pr4": "33.2",
+   "desc": "ปลูกหญ้า",
+   "unit": "ตร.ม.",
+   "qty": 280.0,
+   "rule": "ความกว้าง × ความยาว",
+   "note": "",
+   "waste": null
+  }
+ ]
+}
